@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+class MyClass{
+    static int cnt;// static member variable
+    public:
+        MyClass(){
+            cnt++;
+        }
+        ~MyClass(){
+        cnt--;
+        cout<<cnt<<endl;
+        }
+        static void print(){
+            cout<<cnt<<endl;
+        }
+};
+
+int MyClass::cnt; // must be defined here
+
+
+int main(){
+    MyClass a,b,c,d,e,f; //chk withdrawing static then you will realize the difference
+
+    MyClass::print();
+}
+
+
+
